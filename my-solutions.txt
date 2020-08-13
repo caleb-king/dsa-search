@@ -1,0 +1,39 @@
+constant time - O(1)
+logarithmic time - O(log(n))
+linear time - O(n)
+polynomial time - O(n^k)
+exponential time - O(2^n)
+
+
+1. How many searches?
+    - searching for 8
+        - 12, 6, 8
+    - searching for 16
+        - 12, 17, 14, 15, 'start > end' - return -1
+
+2. Testing Search Efficiency - Linear vs Binary
+    - In general, linear search took about 50 tries on average, varying quite wildly on any given input. If the input did not exist, this took 100 tries.
+    - In general, Binary search took about 4 or 5 tries on average, varying between 3 and 6 for the most part. If the input did not exist, this took 8 searches to discover.
+
+3. Find a book
+    - This is how I would go about finding a specific book in the library with a Dewey Decimal index.
+
+    1) I would first determine where the first books, the books with the lowest dewey decimal numbers are located.
+    2) I would then determine the location of where the dewey decimal indexed books end and get the number there.
+    3) Based on the dewey decimal range, I would then take the dewey decimal value for the book I am looking for and do a rough calculation of where in the range this book might fall. Lets say I think it is around 25% of the range.
+    4) I would then approximate what book shelf would match 25% based on the beginning and ending of the dewey decimal section.
+    5) Next, I'd peek at a book at the beginning of this shelf and determine if it is above or below my target value.
+      5a) if below, I'd move towards the end of the books (and judge the size of my jump based on how big of a gap between the target and actual). 
+      5b) if above, I'd move towards the beginning of the books. (and judge the size of my jump based on how big of a gap between the target and actual)
+      5c) if I am close and spot my book, I'll grab it and be on my way.
+    6) I would repeat step 5 until I found my book.
+
+4. Searching in a BST
+    1) post-order: 14, 19, 15, 27, 25, 79, 90, 91, 89, 35
+    2) pre-order: 8, 6, 5, 7, 10, 9, 11
+
+6. Find the next commanding officer
+    - Rank: Captain Picard, Commander Riker, Commander Data, Lieutenant Commander Worf, Lieutenant Commander LaForge, Lieutenant Commander Crusher, Lieutenant Security Officer, Lieutenant Selar
+
+7. Max profit
+    -  Max profit would be if you bought at $97 per share and sold at $123 per share, profiting $26 per share.
